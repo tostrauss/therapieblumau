@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt & Anfahrt — Therapiezentrum Blumau / Linz</title>
+  <meta name="description" content="Kontakt und Anfahrt zum Therapiezentrum Blumau, Scharitzerstraße 8, 4020 Linz. Öffentlich, PKW und barrierefrei.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="a11y-bar" role="toolbar" aria-label="Barrierefreiheit-Werkzeuge"><div class="container a11y-bar__inner"><span>Ansicht:</span><div class="a11y-bar__controls"><button onclick="adjustFontSize(-1)" aria-label="Schrift verkleinern">A−</button><button onclick="adjustFontSize(0)" aria-label="Schrift zurücksetzen">A</button><button onclick="adjustFontSize(1)" aria-label="Schrift vergrößern">A+</button><button onclick="toggleContrast()" id="contrastBtn" aria-label="Hohen Kontrast umschalten" aria-pressed="false">👁 Kontrast</button></div></div></div>
+
+  <header class="site-header"><div class="container site-header__inner"><a href="index.html" class="logo" aria-label="Startseite"><div class="logo__icon">T</div><div class="logo__text">Therapiezentrum<br><span>Blumau / Linz</span></div></a><button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button><nav class="main-nav" aria-label="Hauptnavigation"><a href="index.html" class="main-nav__link">Startseite</a><a href="therapie.html" class="main-nav__link">Therapie</a><a href="team.html" class="main-nav__link">Team</a><a href="praxis.html" class="main-nav__link">Praxis</a><a href="kontakt.html" class="main-nav__link main-nav__link--active">Kontakt</a><a href="buchen.html" class="nav-cta">📅 Online Buchen</a></nav></div></header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Startseite</a><span class="sep">›</span><span>Kontakt</span></nav>
+        <h1>Kontakt &amp; Anfahrt</h1>
+        <p>So erreichen und finden Sie uns in Linz.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid grid--1-1" style="gap: 3rem;">
+
+          <!-- Contact Info + Directions -->
+          <div class="contact-block reveal">
+            <address>
+              <h2 class="mb-2">Therapiezentrum Blumau / Linz</h2>
+              <p class="text-lg text-mid">
+                Scharitzerstraße 8, 1. Stock<br>
+                4020 Linz
+              </p>
+              <a href="tel:+4373260545" class="phone-lg">📞 0732 / 60 54 50</a>
+            </address>
+
+            <!-- Öffentlich -->
+            <div class="directions mt-4">
+              <h3 class="mb-3">Anfahrt mit öffentlichen Verkehrsmitteln</h3>
+              <div class="mb-3">
+                <h4>🚶 Vom Hauptbahnhof zu Fuß (5 Min.)</h4>
+                <p class="text-mid">Gehen Sie die Bahnhofstraße bis zum Blumauerplatz. Am Blumauerplatz benützen Sie den Durchgang zur Scharitzerstraße (links vom Penny Markt). Rechts am Ende des Durchganges befindet sich der Eingang zum Therapiezentrum. Mit dem Lift kommen Sie barrierefrei ins Therapiezentrum im 1. Stock rechts.</p>
+              </div>
+              <div class="mb-3">
+                <h4>🚋 Mit der Straßenbahn</h4>
+                <p class="text-mid">Linie 1, 2 oder 3 — Haltestelle <strong>Goethekreuzung</strong>. In der Scharitzerstraße nach der Tiefgarage benützen Sie den Durchgang (Glasschiebetüre). Der Eingang befindet sich links. Mit dem Lift kommen Sie barrierefrei ins Therapiezentrum im 1. Stock rechts.</p>
+              </div>
+            </div>
+
+            <!-- PKW -->
+            <div class="directions mt-3">
+              <h3 class="mb-3">Anfahrt per PKW</h3>
+              <p class="text-mid mb-3">Von der A1 zweigen Sie auf die A7 Richtung Linz ab.</p>
+              <div class="mb-3">
+                <h4>Möglichkeit 1:</h4>
+                <p class="text-mid">Verlassen Sie die Stadtautobahn bei der Ausfahrt <strong>Linz-Zentrum / Leonding</strong>. Folgen Sie der Waldeggstraße bis zur 3. Ampel. Dort biegen Sie nach rechts Richtung Hauptbahnhof ab und bleiben auf der Kärntnerstraße bis zum Blumauerplatz. Am Blumauerplatz biegen Sie bei der ersten Möglichkeit links in die Südtirolerstraße ab. Die erste Querstraße ist dann die Scharitzerstraße, in die Sie links einbiegen.</p>
+              </div>
+              <div class="mb-3">
+                <h4>Möglichkeit 2:</h4>
+                <p class="text-mid">Fahren Sie auf der Stadtautobahn bis zur Ausfahrt <strong>Prinz Eugen</strong>. Dort biegen Sie bei der Ampel nach links ab und bleiben auf der Prinz-Eugen-Straße, die nach ca. 500m in die Goethestraße mündet. Bei der Humboldtstraße biegen Sie nach links ab (6. Ampel). Die erste Querstraße ist die Scharitzerstraße, in die Sie rechts einbiegen.</p>
+              </div>
+            </div>
+
+            <!-- Parkmöglichkeiten -->
+            <div id="parkmoeglichkeiten" class="info-box info-box--cream mt-3">
+              <h4>🅿️ Parkmöglichkeiten</h4>
+              <p class="text-mid">Sie finden uns auf Höhe der Blumauergarage. Kurzparkzone vor dem Haus. Tiefgarage Musiktheater in unmittelbarer Nähe.</p>
+            </div>
+
+            <!-- Hinweis -->
+            <div class="info-box info-box--cream mt-2">
+              <p class="text-sm text-soft" style="margin-bottom: 0;">💡 Fahrkarten für städtische öffentliche Verkehrsmittel erhalten Sie bei den Automaten an den Haltestellen. Wochen- und Mehrfahrtenkarten erhalten Sie in den Linzer Trafiken.</p>
+            </div>
+
+            <!-- Team-Nummern -->
+            <div class="mt-4">
+              <h4 class="mb-2">Direktkontakt Therapeut:innen</h4>
+              <div class="grid grid--2 gap-sm">
+                <a href="tel:+436766026024" class="phone-btn" style="justify-content: center;">📞 D. Brock</a>
+                <a href="tel:+436703591515" class="phone-btn" style="justify-content: center;">📞 B. Landlinger</a>
+                <a href="tel:+436506060281" class="phone-btn" style="justify-content: center;">📞 S. Meznik</a>
+                <a href="tel:+436765503038" class="phone-btn" style="justify-content: center;">📞 E. Mostbauer</a>
+                <a href="tel:+436508738056" class="phone-btn" style="justify-content: center;">📞 M. Winter</a>
+                <a href="tel:+4367764871302" class="phone-btn" style="justify-content: center;">📞 M. König</a>
+                <a href="tel:+4368181812116" class="phone-btn" style="justify-content: center;">📞 C. Reinsprecht</a>
+                <a href="tel:+4373260545" class="phone-btn phone-btn--filled" style="justify-content: center;">📞 Zentrale</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Map -->
+          <div class="reveal reveal-delay-1">
+            <div class="map-wrapper">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.0!2d14.2917!3d48.2905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47739786c6d8e4d1%3A0x0!2zU2NoYXJpdHplcnN0cmHDn2UgOCwgNDAyMCBMaW56!5e0!3m2!1sde!2sat!4v1700000000000!5m2!1sde!2sat"
+                width="100%" height="100%" style="border:0; min-height:480px;"
+                allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Standort Therapiezentrum Blumau auf Google Maps"></iframe>
+            </div>
+            <div class="flex gap-sm mt-3 flex-wrap">
+              <a href="https://www.google.com/maps/dir//Scharitzerstra%C3%9Fe+8,+4020+Linz" target="_blank" rel="noopener" class="btn btn--outline btn--sm" style="flex: 1;">🗺️ Route planen</a>
+              <a href="https://www.google.com/maps/place/Scharitzerstra%C3%9Fe+8,+4020+Linz" target="_blank" rel="noopener" class="btn btn--outline btn--sm" style="flex: 1;">📍 In Maps öffnen</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner" aria-label="Termin vereinbaren">
+      <div class="container">
+        <h2>Termin vereinbaren</h2>
+        <p>Buchen Sie bequem online oder rufen Sie uns an!</p>
+        <div class="cta-banner__actions">
+          <a href="buchen.html" class="btn btn--white">📅 Online Buchen</a>
+          <a href="tel:+4373260545" class="btn btn--ghost">📞 Anrufen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="site-footer__grid"><div class="site-footer__brand"><div class="logo__icon">T</div><p>Therapiezentrum Blumau / Linz — Physiotherapie, Osteopathie und mehr.</p></div><nav aria-label="Footer Navigation"><h4>Navigation</h4><ul><li><a href="index.html">Startseite</a></li><li><a href="therapie.html">Therapie</a></li><li><a href="team.html">Team</a></li><li><a href="praxis.html">Praxis</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="buchen.html">Online Buchen</a></li></ul></nav><div><h4>Kontakt</h4><ul><li>📞 <a href="tel:+4373260545">0732 / 60 54 50</a></li><li>📍 Scharitzerstraße 8, 4020 Linz</li></ul></div></div><div class="site-footer__bottom"><span>© 2026 Therapiezentrum Blumau/Linz</span><div class="site-footer__bottom-links"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Sitemap</a></div></div></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

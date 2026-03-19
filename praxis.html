@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praxis — Therapiezentrum Blumau / Linz</title>
+  <meta name="description" content="Unsere barrierefreie Praxis in Linz. Bildergalerie, Öffnungszeiten und Verrechnung.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="a11y-bar" role="toolbar" aria-label="Barrierefreiheit-Werkzeuge"><div class="container a11y-bar__inner"><span>Ansicht:</span><div class="a11y-bar__controls"><button onclick="adjustFontSize(-1)" aria-label="Schrift verkleinern">A−</button><button onclick="adjustFontSize(0)" aria-label="Schrift zurücksetzen">A</button><button onclick="adjustFontSize(1)" aria-label="Schrift vergrößern">A+</button><button onclick="toggleContrast()" id="contrastBtn" aria-label="Hohen Kontrast umschalten" aria-pressed="false">👁 Kontrast</button></div></div></div>
+
+  <header class="site-header"><div class="container site-header__inner"><a href="index.html" class="logo" aria-label="Startseite"><div class="logo__icon">T</div><div class="logo__text">Therapiezentrum<br><span>Blumau / Linz</span></div></a><button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button><nav class="main-nav" aria-label="Hauptnavigation"><a href="index.html" class="main-nav__link">Startseite</a><a href="therapie.html" class="main-nav__link">Therapie</a><a href="team.html" class="main-nav__link">Team</a><a href="praxis.html" class="main-nav__link main-nav__link--active">Praxis</a><a href="kontakt.html" class="main-nav__link">Kontakt</a><a href="buchen.html" class="nav-cta">📅 Online Buchen</a></nav></div></header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Startseite</a><span class="sep">›</span><span>Praxis</span></nav>
+        <h1>Unsere Praxis</h1>
+        <p>Werfen Sie einen Blick in unsere Räumlichkeiten.</p>
+      </div>
+    </div>
+
+    <!-- Bildergalerie -->
+    <section class="section" aria-labelledby="galerie-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="galerie-title">Bildergalerie</h2>
+          <p>Werfen Sie einen Blick in unsere Praxis</p>
+          <span class="section-header__line"></span>
+        </div>
+        <div class="grid grid--3">
+          <div class="room-card reveal">
+            <div class="room-card__visual">🏥</div>
+            <div class="room-card__body"><h3>Behandlungsräume</h3><p>Helle, ruhige Einzelräume für ungestörte Therapiesitzungen.</p></div>
+          </div>
+          <div class="room-card reveal reveal-delay-1">
+            <div class="room-card__visual">🏋️</div>
+            <div class="room-card__body"><h3>Trainingsbereich</h3><p>Therapeutische Geräte wie Pezzibälle, Aerostep und therapeutische Kletterwand.</p></div>
+          </div>
+          <div class="room-card reveal reveal-delay-2">
+            <div class="room-card__visual">☕</div>
+            <div class="room-card__body"><h3>Empfang</h3><p>Einladender Empfangsbereich mit komfortablem Warteraum.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Barrierefreiheit -->
+    <section class="section bg-cream" aria-labelledby="bf-title">
+      <div class="container container--narrow">
+        <div class="a11y-highlight reveal">
+          <span class="a11y-highlight__icon">♿</span>
+          <h3 id="bf-title">Barrierefreiheit</h3>
+          <p>Unsere Räumlichkeiten sind nicht nur hell und freundlich sondern natürlich auch behindertengerecht gestaltet. Ein Lift bringt Sie barrierefrei ins Therapiezentrum im 1. Stock rechts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Öffnungszeiten -->
+    <section id="oeffnungszeiten" class="section" aria-labelledby="oeffnung-title">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <h2 id="oeffnung-title">Öffnungszeiten</h2>
+          <span class="section-header__line"></span>
+        </div>
+        <div class="info-box info-box--white text-center reveal">
+          <p class="text-xl font-bold mb-2">Termine nach Vereinbarung.</p>
+          <p class="text-mid mb-4">Sie möchten gerne einen Termin vereinbaren oder sich in einem Vorab-Beratungsgespräch informieren?</p>
+          <p class="text-mid mb-4">Rufen Sie uns einfach an:</p>
+          <a href="tel:+4373260545" class="phone-btn phone-btn--filled" style="font-size: 1.1rem; padding: 14px 28px;">📞 0732 / 60 54 50</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verrechnung -->
+    <section id="verrechnung" class="section bg-cream" aria-labelledby="verr-title">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <h2 id="verr-title">Der Weg zur Gesundheit</h2>
+          <p>So funktioniert die Behandlung und Verrechnung</p>
+          <span class="section-header__line"></span>
+        </div>
+
+        <div class="info-box info-box--white reveal" style="padding: 2.5rem;">
+          <div class="step-list">
+            <div class="step-list__item">
+              <span class="step-list__num">1.</span>
+              <div><h4>Überweisung</h4><p class="text-mid">Ihr Arzt schreibt Ihnen eine Überweisung für Physiotherapie.</p></div>
+            </div>
+            <div class="step-list__item">
+              <span class="step-list__num">2.</span>
+              <div><h4>Termin</h4><p class="text-mid">Sie vereinbaren mit dem Therapiezentrum Blumau Ihren persönlichen Termin — telefonisch oder <a href="buchen.html" style="color: #f28505; font-weight: 700;">online</a>.</p></div>
+            </div>
+            <div class="step-list__item">
+              <span class="step-list__num">3.</span>
+              <div><h4>Verrechnung</h4><p class="text-mid">Das Team des Therapiezentrum Blumau setzt sich aus <strong>Wahltherapeuten</strong> zusammen. Unsere Leistungen berechnen wir exakt nach Ihren benötigten und absolvierten Einheiten. Für Physiotherapie, Ergotherapie, Kinderneuropsychologie und Logopädie übernimmt die Krankenkasse eine anteilige Kostenrückerstattung. Der jeweilige Betrag differiert je nach Krankenkasse.</p></div>
+            </div>
+            <div class="step-list__item">
+              <span class="step-list__num">4.</span>
+              <div><h4>Individueller Plan</h4><p class="text-mid">In einer ersten Sitzung erheben wir Ihren persönlichen Befund, definieren gemeinsam die Ziele und erstellen einen individuellen Behandlungsplan.</p></div>
+            </div>
+            <div class="step-list__item">
+              <span class="step-list__num">5.</span>
+              <div><h4>Evaluierung</h4><p class="text-mid">Bevor die Therapie abgeschlossen werden kann, überprüft unser Team den Fortschritt bei der Zielerreichung und kontrolliert den Erfolg.</p></div>
+            </div>
+            <div class="step-list__item">
+              <span class="step-list__num">6.</span>
+              <div><h4>Zusammenarbeit mit dem Arzt</h4><p class="text-mid">Die Kommunikation mit Ihrem behandelnden Arzt ist Teil unserer Arbeit und trägt zum Therapieerfolg bei.</p></div>
+            </div>
+            <div class="step-list__item">
+              <span class="step-list__num">7.</span>
+              <div><h4>Teamarbeit</h4><p class="text-mid">Der regelmäßige Austausch in unserem kompetenten Team bietet dem Patienten die Chance einer ganzheitlichen Betrachtungsweise seines Problems.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="site-footer__grid"><div class="site-footer__brand"><div class="logo__icon">T</div><p>Therapiezentrum Blumau / Linz — Physiotherapie, Osteopathie und mehr.</p></div><nav aria-label="Footer Navigation"><h4>Navigation</h4><ul><li><a href="index.html">Startseite</a></li><li><a href="therapie.html">Therapie</a></li><li><a href="team.html">Team</a></li><li><a href="praxis.html">Praxis</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="buchen.html">Online Buchen</a></li></ul></nav><div><h4>Kontakt</h4><ul><li>📞 <a href="tel:+4373260545">0732 / 60 54 50</a></li><li>📍 Scharitzerstraße 8, 4020 Linz</li></ul></div></div><div class="site-footer__bottom"><span>© 2026 Therapiezentrum Blumau/Linz</span><div class="site-footer__bottom-links"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Sitemap</a></div></div></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

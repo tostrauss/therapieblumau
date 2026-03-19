@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Buchen — Therapiezentrum Blumau / Linz</title>
+  <meta name="description" content="Buchen Sie Ihren Physiotherapie-Termin online beim Therapiezentrum Blumau in Linz.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="a11y-bar" role="toolbar" aria-label="Barrierefreiheit-Werkzeuge"><div class="container a11y-bar__inner"><span>Ansicht:</span><div class="a11y-bar__controls"><button onclick="adjustFontSize(-1)" aria-label="Schrift verkleinern">A−</button><button onclick="adjustFontSize(0)" aria-label="Schrift zurücksetzen">A</button><button onclick="adjustFontSize(1)" aria-label="Schrift vergrößern">A+</button><button onclick="toggleContrast()" id="contrastBtn" aria-label="Hohen Kontrast umschalten" aria-pressed="false">👁 Kontrast</button></div></div></div>
+
+  <header class="site-header"><div class="container site-header__inner"><a href="index.html" class="logo" aria-label="Startseite"><div class="logo__icon">T</div><div class="logo__text">Therapiezentrum<br><span>Blumau / Linz</span></div></a><button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button><nav class="main-nav" aria-label="Hauptnavigation"><a href="index.html" class="main-nav__link">Startseite</a><a href="therapie.html" class="main-nav__link">Therapie</a><a href="team.html" class="main-nav__link">Team</a><a href="praxis.html" class="main-nav__link">Praxis</a><a href="kontakt.html" class="main-nav__link">Kontakt</a><a href="buchen.html" class="nav-cta">📅 Online Buchen</a></nav></div></header>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Startseite</a><span class="sep">›</span><span>Online Buchen</span></nav>
+        <h1>Online Termin buchen</h1>
+        <p>Wählen Sie Ihre Therapeutin und Ihren Wunschtermin.</p>
+      </div>
+    </div>
+
+    <section class="section bg-cream">
+      <div class="container container--narrow">
+
+        <!-- Info: Wer hat Online-Buchung? -->
+        <div class="info-box info-box--white mb-4 reveal">
+          <h3 class="mb-2">Online-Buchung verfügbar für:</h3>
+          <div class="grid grid--2 gap-sm">
+            <div class="flex items-center gap-sm">
+              <span>✅</span>
+              <div><strong>Barbara Landlinger</strong><br><span class="text-sm text-soft">0670/359 15 15</span></div>
+            </div>
+            <div class="flex items-center gap-sm">
+              <span>✅</span>
+              <div><strong>Eva Mostbauer, MSc.</strong><br><span class="text-sm text-soft">0676/550 30 38</span></div>
+            </div>
+            <div class="flex items-center gap-sm">
+              <span>✅</span>
+              <div><strong>Moritz Winter, BSc.</strong><br><span class="text-sm text-soft">0650/873 80 56</span></div>
+            </div>
+            <div class="flex items-center gap-sm">
+              <span>✅</span>
+              <div><strong>Christiane Reinsprecht, BSc.</strong><br><span class="text-sm text-soft">0681/81812116</span></div>
+            </div>
+          </div>
+          <hr class="mt-3 mb-3">
+          <p class="text-sm text-soft">Daniela Brock, Sabine Meznik und Magdalena König — bitte telefonisch Termin vereinbaren.</p>
+        </div>
+
+        <!-- Booking iFrame -->
+        <div class="booking-frame reveal">
+          <iframe
+            src="http://www.terminbuchen.at/blumau/index.php"
+            title="Online Terminbuchung Therapiezentrum Blumau"
+            loading="lazy"></iframe>
+        </div>
+
+        <!-- Fallback -->
+        <div class="text-center mt-4">
+          <p class="text-soft mb-2">Falls die Online-Buchung nicht laden sollte:</p>
+          <a href="http://www.terminbuchen.at/blumau/index.php" target="_blank" rel="noopener" class="btn btn--primary">🔗 Buchungsseite öffnen (neues Fenster)</a>
+        </div>
+
+        <!-- Hinweise -->
+        <div class="info-box info-box--white mt-6 reveal" style="padding: 2.5rem;">
+          <h3 class="mb-3" style="color: #b86600;">Wichtige Hinweise</h3>
+          <div class="feature-item mb-2" style="background: #fef3e6;">
+            <span class="feature-item__icon">💊</span>
+            <div><h4>Ärztliche Überweisung</h4><p>Bitte bringen Sie zu Ihrem ersten Termin eine ärztliche Überweisung für Physiotherapie mit.</p></div>
+          </div>
+          <div class="feature-item mb-2" style="background: #fef3e6;">
+            <span class="feature-item__icon">💰</span>
+            <div><h4>Wahltherapeuten</h4><p>Wir sind Wahltherapeuten. Die Krankenkasse übernimmt eine anteilige Kostenrückerstattung. Der Betrag differiert je nach Krankenkasse.</p></div>
+          </div>
+          <div class="feature-item mb-2" style="background: #fef3e6;">
+            <span class="feature-item__icon">⏰</span>
+            <div><h4>Absage</h4><p>Termine, die nicht mindestens <strong>24 Stunden</strong> im Voraus abgesagt werden, müssen in Rechnung gestellt werden.</p></div>
+          </div>
+          <div class="feature-item" style="background: #fef3e6;">
+            <span class="feature-item__icon">📞</span>
+            <div><h4>Telefonisch buchen</h4><p>Sie können auch telefonisch unter <a href="tel:+4373260545" style="color: #f28505; font-weight: 700;">0732 / 60 54 50</a> oder direkt bei Ihrer Therapeutin einen Termin vereinbaren.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><div class="site-footer__grid"><div class="site-footer__brand"><div class="logo__icon">T</div><p>Therapiezentrum Blumau / Linz — Physiotherapie, Osteopathie und mehr.</p></div><nav aria-label="Footer Navigation"><h4>Navigation</h4><ul><li><a href="index.html">Startseite</a></li><li><a href="therapie.html">Therapie</a></li><li><a href="team.html">Team</a></li><li><a href="praxis.html">Praxis</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="buchen.html">Online Buchen</a></li></ul></nav><div><h4>Kontakt</h4><ul><li>📞 <a href="tel:+4373260545">0732 / 60 54 50</a></li><li>📍 Scharitzerstraße 8, 4020 Linz</li></ul></div></div><div class="site-footer__bottom"><span>© 2026 Therapiezentrum Blumau/Linz</span><div class="site-footer__bottom-links"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Sitemap</a></div></div></div></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+/* --- Variables based on request --- */
+$c-primary: #f28505;        // The requested Orange
+$c-primary-dark: #c96d00;   // Darker orange for hover/active
+$c-cream: #fef3e6;          // The requested Cream background
+$c-white: #ffffff;
+$c-text: #2a2a2a;           // Dark grey for readability (high contrast)
+$c-text-light: #555555;
+$c-border: #e0d0c0;
+
+/* --- Typography --- */
+$font-stack: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+$base-size: 18px; // Larger base size for older adults
+
+/* --- Reset & Base --- */
+:root {
+  --font-scale: 1;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $base-size; // Setting large base
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-stack;
+  background-color: $c-white;
+  color: $c-text;
+  line-height: 1.6;
+  font-size: calc(1rem * var(--font-scale));
+}
+
+img { max-width: 100%; height: auto; }
+a { text-decoration: none; color: inherit; transition: 0.2s; }
+ul { list-style: none; }
+
+/* --- Accessibility Classes --- */
+.high-contrast {
+  $c-primary: #000000;
+  $c-cream: #ffffff;
+  
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  .bg-cream, .bg-orange-light {
+    background-color: #fff !important;
+    border: 2px solid black;
+  }
+  
+  .btn-primary {
+    background-color: yellow !important;
+    color: black !important;
+    border: 2px solid black;
+    font-weight: bold;
+  }
+  
+  a { text-decoration: underline; }
+}
+
+/* --- Accessibility Bar --- */
+.a11y-bar {
+  background-color: $c-text;
+  color: $c-white;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  
+  .a11y-inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  button {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 2px 8px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    
+    &:hover, &:focus {
+      background: $c-primary;
+      color: black;
+    }
+  }
+}
+
+/* --- Header & Nav --- */
+.main-header {
+  background-color: $c-primary;
+  color: $c-cream;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 0.5rem 0;
+  
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    .logo-icon {
+      font-size: 2rem;
+      font-weight: bold;
+      background: $c-cream;
+      color: $c-primary;
+      width: 40px; height: 40px;
+      display: flex; 
+      align-items: center; justify-content: center;
+      border-radius: 4px;
+    }
+    
+    .logo-text {
+      font-weight: bold;
+      line-height: 1.1;
+      font-size: 1.1rem;
+    }
+  }
+  
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    ul {
+      display: flex;
+      gap: 20px;
+      
+      a {
+        font-weight: bold;
+        padding: 0.5rem;
+        &:hover, &:focus {
+          text-decoration: underline;
+          color: white;
+        }
+      }
+    }
+  }
+  
+  .btn-nav-call {
+    background: $c-white;
+    color: $c-primary;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: bold;
+    white-space: nowrap;
+    
+    &:hover { background: $c-cream; }
+  }
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: white;
+  }
+}
+
+/* --- Layout Containers --- */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.bg-cream { background-color: $c-cream; }
+.bg-orange-light { background-color: lighten($c-primary, 45%); }
+
+/* --- Hero Section --- */
+.hero {
+  background: linear-gradient(to bottom, $c-cream 0%, #fff 100%);
+  padding: 3rem 0;
+  border-bottom: 5px solid $c-primary;
+  
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    color: $c-primary;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight {
+    color: $c-primary-dark;
+  }
+  
+  .lead {
+    font-size: 1.2rem;
+    color: $c-text-light;
+    margin-bottom: 2rem;
+    max-width: 600px;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .info-badge {
+    background: rgba($c-primary, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid $c-primary;
+  }
+}
+
+/* --- Sidebar --- */
+.hero-sidebar {
+  .card {
+    background: $c-white;
+    border: 1px solid $c-border;
+    border-top: 6px solid $c-primary;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 4px;
+    
+    h3 { color: $c-primary; margin-bottom: 1rem; }
+    
+    .quick-contact-list {
+      margin-top: 1rem;
+      li {
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #eee;
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
+
+/* --- Services --- */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  
+  .service-card {
+    background: $c-white;
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid $c-border;
+    transition: transform 0.2s;
+    
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $c-primary;
+    }
+    
+    .icon { font-size: 3rem; margin-bottom: 1rem; }
+    
+    h3 { color: $c-primary; margin-bottom: 0.5rem; }
+    
+    ul {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+      list-style: disc;
+      color: $c-text-light;
+    }
+  }
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid transparent;
+  cursor: pointer;
+  
+  &-primary {
+    background-color: $c-primary;
+    color: white;
+    &:hover { background-color: $c-primary-dark; }
+  }
+  
+  &-outline {
+    border-color: $c-primary;
+    color: $c-primary;
+    &:hover { background-color: $c-primary; color: white; }
+  }
+  
+  &-white {
+    background-color: $c-primary; /* Made orange for better visibility in sidebar */
+    color: white;
+    &:hover { background-color: $c-primary-dark; }
+  }
+  
+  &-full { width: 100%; }
+  
+  &-small {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    border: 1px solid $c-border;
+    &:hover { border-color: $c-primary; color: $c-primary; }
+  }
+}
+
+/* --- Team List --- */
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+  .team-row {
+    background: $c-cream;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    
+    h3 { margin-bottom: 0.2rem; }
+    .role { display: block; font-size: 0.9rem; color: $c-text-light; font-style: italic; margin-bottom: 0.5rem; }
+    
+    .team-action {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    &.summary {
+      background: transparent;
+      border: 2px dashed $c-border;
+    }
+  }
+}
+
+/* --- Contact --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  
+  .phone-large {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $c-primary;
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  .map-container {
+    min-height: 300px;
+    background: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+}
+
+/* --- Footer --- */
+footer {
+  background: #333;
+  color: #ccc;
+  padding: 2rem 0;
+  margin-top: auto;
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    a:hover { color: $c-primary; }
+  }
+}
+
+/* --- Mobile Responsive --- */
+@media (max-width: 768px) {
+  .main-nav {
+    position: fixed;
+    top: 60px; left: 0; right: 0;
+    background: $c-white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    display: none; // hidden by default
+    border-top: 1px solid #eee;
+    
+    &.active { display: flex; }
+    
+    ul { flex-direction: column; width: 100%; text-align: center; gap: 0; }
+    li { width: 100%; border-bottom: 1px solid #f0f0f0; }
+    a { display: block; padding: 1rem; color: $c-text !important; }
+  }
+
+  .mobile-toggle { display: block; }
+
+  .hero-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-sidebar {
+    order: -1; // Put contact info first on mobile for easy access? 
+    // Or stick to bottom. Let's keep it standard:
+    order: 1; 
+  }
+  
+  .team-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

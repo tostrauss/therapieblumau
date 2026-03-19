@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Therapiezentrum Blumau / Linz — Physiotherapie & Osteopathie</title>
+    <meta name="description" content="Therapiezentrum Blumau in Linz. Physiotherapie, Osteopathie und mehr.">
+    <link rel="stylesheet" href="style.scss"> </head>
+<body>
+
+    <div class="a11y-bar" role="toolbar" aria-label="Barrierefreiheit Werkzeuge">
+        <div class="container a11y-inner">
+            <span>Ansicht anpassen:</span>
+            <div class="a11y-controls">
+                <button onclick="adjustFontSize(-1)" aria-label="Schrift verkleinern">A-</button>
+                <button onclick="adjustFontSize(0)" aria-label="Schrift normal">A</button>
+                <button onclick="adjustFontSize(1)" aria-label="Schrift vergrößern">A+</button>
+                <button onclick="toggleContrast()" id="contrastBtn" aria-label="Hoher Kontrast umschalten">👁 Kontrast</button>
+            </div>
+        </div>
+    </div>
+
+    <header class="main-header">
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <div class="logo-icon">Logo</div>
+                <div class="logo-text">Therapiezentrum<br>BLUMAU / LINZ</div>
+            </a>
+            
+            <button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">Startseite</a></li>
+                    <li><a href="#therapie">Therapie</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#praxis">Praxis & Kontakt</a></li>
+                </ul>
+                <a href="tel:+4373260545" class="btn-nav-call">📞 0732 / 60 54 50</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1>Das Beste für Ihre <span class="highlight">Gesundheit</span></h1>
+                    <p class="lead">Physiotherapie & Osteopathie in Linz. Individuell, nachhaltig und funktionell auf Sie abgestimmt.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#kontakt" class="btn btn-primary">Termin vereinbaren</a>
+                        <a href="#therapie" class="btn btn-outline">Unsere Leistungen</a>
+                    </div>
+
+                    <div class="info-badge">
+                        <strong>📍 Scharitzerstraße 8, 4020 Linz</strong><br>
+                        Barrierefrei (Lift) · 1. Stock
+                    </div>
+                </div>
+                <aside class="hero-sidebar">
+                    <div class="card highlight-card">
+                        <h3>Terminvereinbarung</h3>
+                        <p>Wir sind Wahltherapeuten. Bitte rufen Sie uns an oder buchen Sie online.</p>
+                        <a href="http://www.terminbuchen.at/blumau/index.php" target="_blank" class="btn btn-white btn-full">📅 Online Buchen</a>
+                        <hr>
+                        <ul class="quick-contact-list">
+                            <li><strong>Daniela Brock:</strong> 0676 / 602 602 4</li>
+                            <li><strong>Barbara Landlinger:</strong> 0670 / 359 15 15</li>
+                            <li><strong>Allgemein:</strong> 0732 / 60 54 50</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="therapie" class="section bg-cream">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Unsere Therapieformen</h2>
+                    <p>Wir unterstützen Sie bei akuten und chronischen Schmerzen, nach Operationen und zur Vorbeugung.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="icon">🦴</div>
+                        <h3>Physiotherapie</h3>
+                        <p>Manuelle Therapie, Sportphysiotherapie, Rehabilitation und Rückenschule.</p>
+                        <ul>
+                            <li>Vor & nach Operationen</li>
+                            <li>Gelenksbeschwerden</li>
+                            <li>Sportverletzungen</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="icon">🤲</div>
+                        <h3>Osteopathie</h3>
+                        <p>Ganzheitliche Behandlung des Bewegungsapparates, der Organe und des Nervensystems.</p>
+                        <ul>
+                            <li>Kopfschmerzen & Migräne</li>
+                            <li>Verdauungsprobleme</li>
+                            <li>Kieferprobleme</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="icon">🧠</div>
+                        <h3>Neurologie & Kinder</h3>
+                        <p>Spezialisierte Therapien für Entwicklungsverzögerungen und neurologische Erkrankungen.</p>
+                        <ul>
+                            <li>Kinderpsychologie</li>
+                            <li>Entwicklungsdiagnostik</li>
+                            <li>Schlaganfall-Reha</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Ihr Team</h2>
+                    <p>Sie sind bei uns in guten Händen.</p>
+                </div>
+
+                <div class="team-list">
+                    <div class="team-row">
+                        <div class="team-info">
+                            <h3>Daniela Brock</h3>
+                            <span class="role">Leitung · Physiotherapeutin</span>
+                            <p>Spezialisiert auf: Orthopädie, Sportphysio, Manuelle Therapie.</p>
+                        </div>
+                        <div class="team-action">
+                            <a href="tel:+436766026024" class="btn btn-small">📞 0676 / 602 602 4</a>
+                        </div>
+                    </div>
+
+                    <div class="team-row">
+                        <div class="team-info">
+                            <h3>Barbara Landlinger</h3>
+                            <span class="role">Physiotherapeutin</span>
+                            <p>Spezialisiert auf: Osteopathie, Neurologie, Beckenboden.</p>
+                        </div>
+                        <div class="team-action">
+                            <a href="tel:+436703591515" class="btn btn-small">📞 0670 / 359 15 15</a>
+                            <a href="http://www.terminbuchen.at/blumau/index.php" target="_blank" class="btn btn-small btn-secondary">Online Buchen</a>
+                        </div>
+                    </div>
+
+                    <div class="team-row">
+                        <div class="team-info">
+                            <h3>Eva Mostbauer, MSc.</h3>
+                            <span class="role">Physiotherapeutin</span>
+                            <p>Spezialisiert auf: Kiefer (CMD), Kopfschmerz, Traumatologie.</p>
+                        </div>
+                        <div class="team-action">
+                            <a href="tel:+436765503038" class="btn btn-small">📞 0676 / 550 30 38</a>
+                            <a href="http://www.terminbuchen.at/blumau/index.php" target="_blank" class="btn btn-small btn-secondary">Online Buchen</a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-row summary">
+                        <p>Sowie <strong>Sabine Meznik</strong>, <strong>Magdalena König</strong>, <strong>Moritz Winter</strong> und <strong>Christiane Reinsprecht</strong>.</p>
+                        <a href="tel:+4373260545" class="btn btn-small">Zentrale: 0732 / 60 54 50</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="praxis" class="section bg-orange-light">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Kontakt & Anfahrt</h2>
+                        <address>
+                            <strong>Therapiezentrum Blumau / Linz</strong><br>
+                            Scharitzerstraße 8, 1. Stock<br>
+                            4020 Linz<br><br>
+                            <a href="tel:+4373260545" class="phone-large">0732 / 60 54 50</a><br>
+                            <a href="mailto:info@therapie-linz.at">info@therapie-linz.at</a>
+                        </address>
+                        
+                        <div class="accessibility-note">
+                            <strong>♿ Barrierefrei:</strong>
+                            <p>Unsere Praxis ist behindertengerecht. Ein Lift bringt Sie direkt in den 1. Stock.</p>
+                        </div>
+
+                        <div class="directions">
+                            <h3>Anreise</h3>
+                            <p><strong>Öffentlich:</strong> Straßenbahn 1, 2, 3 (Goethekreuzung) oder 5 Min. vom Hauptbahnhof.</p>
+                            <p><strong>Auto:</strong> Kurzparkzone vor dem Haus oder Garage "Musiktheater".</p>
+                        </div>
+                    </div>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <span>Karte wird geladen...</span>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2659.130283216348!2d14.2925!3d48.2915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDjCsDE3JzI5LjQiTiAxNMKwMTcnMzMuMCJF!5e0!3m2!1sde!2sat!4v1620000000000!5m2!1sde!2sat" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>© 2026 Therapiezentrum Blumau / Linz</p>
+            <ul class="footer-links">
+                <li><a href="#">Impressum</a></li>
+                <li><a href="#">Datenschutz</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

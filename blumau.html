@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Therapiezentrum Blumau / Linz — Neu</title>
+<style>
+    
+    /* 1. Variables & Colors */
+    :root {
+        --c-orange: #f28505;        /* Your Requested Orange */
+        --c-orange-dark: #c06800;   /* Darker for hover states */
+        --c-cream: #fef3e6;         /* Your Requested Cream Background */
+        --c-white: #ffffff;
+        --c-text: #222222;          /* Very dark grey for best readability */
+        --c-text-soft: #4a4a4a;
+        --c-border: #e6dccf;
+        
+        --font-main: Helvetica, Arial, sans-serif;
+        --base-size: 19px;          /* Large base font for seniors */
+        --scale: 1;                 /* For the resizer tool */
+    }
+
+    /* 2. Base Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html {
+        font-size: var(--base-size);
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        font-family: var(--font-main);
+        background-color: var(--c-cream);
+        color: var(--c-text);
+        line-height: 1.6;
+        /* Apply zoom scale from JS here */
+        transform-origin: top center;
+        font-size: calc(var(--base-size) * var(--scale));
+    }
+
+    a { text-decoration: none; color: inherit; transition: 0.2s ease; }
+    ul { list-style: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* 3. Utility Classes */
+    .container {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+    
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.8em 1.5em;
+        border-radius: 50px; /* Pill shape is friendly */
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        text-align: center;
+    }
+
+    .btn-primary {
+        background-color: var(--c-orange);
+        color: var(--c-white);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .btn-primary:hover {
+        background-color: var(--c-orange-dark);
+        transform: translateY(-2px);
+    }
+
+    .btn-outline {
+        background-color: transparent;
+        border-color: var(--c-orange);
+        color: var(--c-orange-dark);
+    }
+    .btn-outline:hover {
+        background-color: var(--c-orange);
+        color: white;
+    }
+
+    /* 4. Accessibility Bar (Top) */
+    .a11y-bar {
+        background-color: #333;
+        color: #fff;
+        padding: 8px 0;
+        font-size: 0.85rem;
+        position: relative;
+        z-index: 2000;
+    }
+    .a11y-inner {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 15px;
+    }
+    .a11y-controls button {
+        background: #555;
+        border: 1px solid #777;
+        color: white;
+        padding: 2px 10px;
+        cursor: pointer;
+        font-size: 0.9em;
+        border-radius: 4px;
+        margin-left: 2px;
+    }
+    .a11y-controls button:hover { background: var(--c-orange); border-color: var(--c-orange); }
+
+    /* 5. Header & Navigation */
+    header {
+        background-color: var(--c-white);
+        border-bottom: 5px solid var(--c-orange);
+        position: sticky; /* Sticks to top */
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        padding: 15px 0;
+    }
+    .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: var(--c-orange);
+        line-height: 1.1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .logo-icon {
+        background: var(--c-orange);
+        color: white;
+        width: 45px; height: 45px;
+        display: flex; align-items: center; justify-content: center;
+        border-radius: 8px;
+        font-size: 1.5rem;
+    }
+    
+    /* Desktop Nav */
+    nav ul {
+        display: flex;
+        gap: 5px;
+    }
+    nav a {
+        padding: 10px 15px;
+        font-weight: bold;
+        color: var(--c-text);
+        border-radius: 4px;
+    }
+    nav a:hover, nav a.active {
+        background-color: var(--c-cream);
+        color: var(--c-orange-dark);
+    }
+    .nav-phone {
+        background-color: var(--c-orange);
+        color: white !important;
+        border-radius: 50px;
+        margin-left: 10px;
+    }
+    .nav-phone:hover { background-color: var(--c-orange-dark); }
+
+    /* 6. Hero Section */
+    .hero {
+        padding: 60px 0;
+        background: linear-gradient(to bottom, var(--c-white) 0%, var(--c-cream) 100%);
+    }
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+    }
+    h1 {
+        font-size: 2.5em;
+        color: var(--c-text);
+        margin-bottom: 0.5em;
+        line-height: 1.2;
+    }
+    h1 span { color: var(--c-orange); }
+    .hero-lead {
+        font-size: 1.1em;
+        color: var(--c-text-soft);
+        margin-bottom: 1.5em;
+        max-width: 500px;
+    }
+    .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+    
+    /* Quick Info Card */
+    .info-card {
+        background: white;
+        border: 2px solid var(--c-orange);
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 10px 20px rgba(242, 133, 5, 0.15);
+    }
+    .info-card h3 { color: var(--c-orange); margin-bottom: 15px; }
+    .info-list li {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+        display: flex; justify-content: space-between;
+    }
+    .info-list strong { color: var(--c-text); }
+
+    /* 7. Services Section */
+    .section { padding: 80px 0; }
+    .bg-white { background: white; }
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .section-title h2 { font-size: 2em; color: var(--c-orange-dark); }
+    .section-title p { font-size: 1.1em; color: var(--c-text-soft); }
+
+    .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        background: var(--c-white);
+        border: 1px solid var(--c-border);
+        border-top: 5px solid var(--c-orange); /* Distinctive orange top */
+        padding: 30px;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+    .card-icon {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+        display: block;
+    }
+    .card h3 { margin-bottom: 10px; font-size: 1.3em; }
+    .card ul { margin-top: 15px; padding-left: 20px; list-style: disc; color: var(--c-text-soft); }
+
+    /* 8. Team Section */
+    .team-member {
+        background: var(--c-cream);
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        border: 1px solid #eaddce;
+    }
+    .team-info h4 { font-size: 1.2em; margin-bottom: 5px; }
+    .team-role { color: var(--c-orange-dark); font-weight: bold; font-size: 0.9em; text-transform: uppercase;}
+    .team-phone {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-weight: bold;
+        color: var(--c-text);
+        padding: 8px 15px;
+        background: white;
+        border-radius: 50px;
+        border: 1px solid var(--c-border);
+    }
+    .team-phone:hover { border-color: var(--c-orange); color: var(--c-orange); }
+
+    /* 9. Footer */
+    footer {
+        background-color: #2c2c2c;
+        color: #bbb;
+        padding: 40px 0;
+        font-size: 0.9em;
+    }
+    footer a:hover { color: var(--c-orange); }
+
+    /* 10. High Contrast Mode (Accessibility) */
+    body.high-contrast {
+        --c-orange: #000;
+        --c-orange-dark: #000;
+        --c-cream: #fff;
+        --c-text: #000;
+        --c-text-soft: #000;
+        background-color: white;
+    }
+    body.high-contrast .card, 
+    body.high-contrast .info-card, 
+    body.high-contrast .btn {
+        border: 2px solid black;
+        box-shadow: none;
+    }
+    body.high-contrast .btn-primary {
+        background-color: yellow;
+        color: black;
+    }
+    body.high-contrast header { border-bottom: 4px solid black; }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .hero-grid { grid-template-columns: 1fr; }
+        .header-row { flex-direction: column; gap: 15px; }
+        nav ul { flex-wrap: wrap; justify-content: center; }
+        .hero { padding: 30px 0; text-align: center; }
+        .hero-actions { justify-content: center; }
+        .info-card { margin-top: 30px; text-align: left; }
+        .team-member { flex-direction: column; align-items: flex-start; }
+        .team-phone { width: 100%; justify-content: center; }
+    }
+</style>
+</head>
+<body>
+
+    <div class="a11y-bar">
+        <div class="container a11y-inner">
+            <span>Ansicht anpassen:</span>
+            <div class="a11y-controls">
+                <button onclick="changeSize(-0.1)" aria-label="Schrift kleiner">A-</button>
+                <button onclick="changeSize(0)" aria-label="Schrift normal">A</button>
+                <button onclick="changeSize(0.1)" aria-label="Schrift größer">A+</button>
+                <button onclick="toggleContrast()">👁 Kontrast</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-row">
+            <a href="#" class="logo">
+                <div class="logo-icon">T</div>
+                <div>Therapie<br>BLUMAU / LINZ</div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Startseite</a></li>
+                    <li><a href="#therapie">Therapie</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                    <li><a href="tel:+4373260545" class="nav-phone">📞 0732 / 60 54 50</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1>Das Beste für Ihre <br><span>Gesundheit</span></h1>
+                    <p class="hero-lead">Physiotherapie & Osteopathie in Linz. Individuell, nachhaltig und funktionell auf Sie abgestimmt. Barrierefrei im 1. Stock.</p>
+                    <div class="hero-actions">
+                        <a href="http://www.terminbuchen.at/blumau/index.php" target="_blank" class="btn btn-primary">📅 Online Termin buchen</a>
+                        <a href="#therapie" class="btn btn-outline">Unsere Leistungen ↓</a>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Terminvereinbarung</h3>
+                    <p style="margin-bottom:15px;">Wir sind Wahltherapeuten. Bitte rufen Sie uns an oder buchen Sie direkt online.</p>
+                    <ul class="info-list">
+                        <li><span>Zentrale:</span> <strong>0732 / 60 54 50</strong></li>
+                        <li><span>D. Brock:</span> <strong>0676 / 602 602 4</strong></li>
+                        <li><span>B. Landlinger:</span> <strong>0670 / 359 15 15</strong></li>
+                    </ul>
+                    <div style="margin-top:15px; font-size:0.9em; color:#666;">
+                        📍 <strong>Scharitzerstraße 8, 4020 Linz</strong><br>
+                        (Barrierefrei mit Lift)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="therapie" class="section bg-white">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Unsere Therapieformen</h2>
+                    <p>Wir unterstützen Sie bei akuten und chronischen Schmerzen.</p>
+                </div>
+                
+                <div class="grid-3">
+                    <div class="card">
+                        <span class="card-icon">🦴</span>
+                        <h3>Physiotherapie</h3>
+                        <p>Wiederherstellung natürlicher Bewegungsabläufe. Ideal bei Gelenksbeschwerden, Sportverletzungen oder nach Operationen.</p>
+                        <ul>
+                            <li>Manuelle Therapie</li>
+                            <li>Sportphysiotherapie</li>
+                            <li>Rückenschule</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <span class="card-icon">🤲</span>
+                        <h3>Osteopathie</h3>
+                        <p>Ganzheitliche Methode zur Aktivierung der Selbstheilungskräfte. Betrachtung von Organen, Struktur und Nervensystem.</p>
+                        <ul>
+                            <li>Cranio-Sacral</li>
+                            <li>Viszerale Therapie</li>
+                            <li>Kieferprobleme</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <span class="card-icon">🧠</span>
+                        <h3>Neurologie & Kinder</h3>
+                        <p>Spezielle Therapien für Erwachsene und Kinder bei neurologischen Erkrankungen oder Entwicklungsfragen.</p>
+                        <ul>
+                            <li>Kinderpsychologie</li>
+                            <li>Schlaganfall-Reha</li>
+                            <li>Entwicklungsdiagnostik</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Ihr Team</h2>
+                    <p>Rufen Sie Ihre Therapeutin direkt an.</p>
+                </div>
+
+                <div class="team-list">
+                    <div class="team-member">
+                        <div class="team-info">
+                            <div class="team-role">Leitung & Physiotherapie</div>
+                            <h4>Daniela Brock</h4>
+                            <p style="font-size:0.9em;">Orthopädie, Sportphysio, Manuelle Therapie</p>
+                        </div>
+                        <a href="tel:+436766026024" class="team-phone">📞 0676 / 602 602 4</a>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="team-info">
+                            <div class="team-role">Physiotherapie & Osteopathie</div>
+                            <h4>Barbara Landlinger</h4>
+                            <p style="font-size:0.9em;">Neurologie, Beckenboden, Hausbesuche</p>
+                        </div>
+                        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                            <a href="tel:+436703591515" class="team-phone">📞 0670 / 359 15 15</a>
+                            <a href="http://www.terminbuchen.at/blumau/index.php" target="_blank" class="btn btn-primary" style="padding: 8px 15px; font-size:0.9em;">Buchen</a>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-info">
+                            <div class="team-role">Physiotherapie</div>
+                            <h4>Eva Mostbauer, MSc.</h4>
+                            <p style="font-size:0.9em;">CMD (Kiefer), Kopfschmerz, Trauma</p>
+                        </div>
+                        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                            <a href="tel:+436765503038" class="team-phone">📞 0676 / 550 30 38</a>
+                            <a href="http://www.terminbuchen.at/blumau/index.php" target="_blank" class="btn btn-primary" style="padding: 8px 15px; font-size:0.9em;">Buchen</a>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align:center; margin-top:30px; color:#666;">
+                        Sowie <strong>Sabine Meznik</strong>, <strong>Magdalena König</strong>, <strong>Moritz Winter</strong> und <strong>Christiane Reinsprecht</strong>.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="section bg-white" style="border-top: 5px solid var(--c-orange);">
+            <div class="container">
+                <div class="grid-3" style="grid-template-columns: 1fr 1fr;">
+                    <div>
+                        <h2>Kontakt & Anfahrt</h2>
+                        <p style="margin-bottom:20px;">
+                            <strong>Therapiezentrum Blumau / Linz</strong><br>
+                            Scharitzerstraße 8 (1. Stock)<br>
+                            4020 Linz
+                        </p>
+                        <p>
+                            <strong>E-Mail:</strong> <a href="mailto:info@therapie-linz.at" style="text-decoration:underline;">info@therapie-linz.at</a><br>
+                            <strong>Fax:</strong> 0732 / 60 54 50-89
+                        </p>
+                        
+                        <div style="margin-top:20px; padding:15px; background:var(--c-cream); border-radius:8px;">
+                            <strong>🚗 Anreise PKW:</strong><br>
+                            Kurzparkzone vor dem Haus oder Garage "Musiktheater".
+                            <br><br>
+                            <strong>🚋 Öffentliche Verkehrsmittel:</strong><br>
+                            Straßenbahn 1, 2, 3 (Goethekreuzung) oder 5 Min. Fußweg vom Hauptbahnhof.
+                        </div>
+                    </div>
+                    <div style="background:#eee; min-height:300px; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#888;">
+                        (Karte hier einbinden)
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+            <div>© 2026 Therapiezentrum Blumau / Linz</div>
+            <div style="display:flex; gap:20px;">
+                <a href="#">Impressum</a>
+                <a href="#">Datenschutz</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Logic for Contrast Toggle
+        function toggleContrast() {
+            document.body.classList.toggle('high-contrast');
+        }
+
+        // 2. Logic for Font Resizing
+        let currentScale = 1;
+        function changeSize(amount) {
+            if (amount === 0) {
+                currentScale = 1;
+            } else {
+                currentScale += amount;
+                // Constraints: Min 0.9, Max 1.4
+                if (currentScale < 0.9) currentScale = 0.9;
+                if (currentScale > 1.4) currentScale = 1.4;
+            }
+            document.documentElement.style.setProperty('--scale', currentScale);
+        }
+    </script>
+
+</body>
+</html>

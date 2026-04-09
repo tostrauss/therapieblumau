@@ -12,9 +12,9 @@
 </head>
 <body>
 
-  <div class="a11y-bar" role="toolbar" aria-label="Barrierefreiheit-Werkzeuge"><div class="container a11y-bar__inner"><span>Ansicht:</span><div class="a11y-bar__controls"><button onclick="adjustFontSize(-1)" aria-label="Schrift verkleinern">A−</button><button onclick="adjustFontSize(0)" aria-label="Schrift zurücksetzen">A</button><button onclick="adjustFontSize(1)" aria-label="Schrift vergrößern">A+</button><button onclick="toggleContrast()" id="contrastBtn" aria-label="Hohen Kontrast umschalten" aria-pressed="false">👁 Kontrast</button></div></div></div>
+  <div class="a11y-bar" role="toolbar" aria-label="Barrierefreiheit-Werkzeuge"><div class="container a11y-bar__inner"><span>Ansicht:</span><div class="a11y-bar__controls"><button onclick="adjustFontSize(-1)" aria-label="Schrift verkleinern">A−</button><button onclick="adjustFontSize(0)" aria-label="Schrift zurücksetzen">A</button><button onclick="adjustFontSize(1)" aria-label="Schrift vergrößern">A+</button><button onclick="toggleContrast()" id="contrastBtn" aria-label="Hohen Kontrast umschalten" aria-pressed="false">Kontrast</button></div></div></div>
 
-  <header class="site-header"><div class="container site-header__inner"><a href="index.html" class="logo" aria-label="Startseite"><div class="logo__icon">T</div><div class="logo__text">Therapiezentrum<br><span>Blumau / Linz</span></div></a><button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button><nav class="main-nav" aria-label="Hauptnavigation"><a href="index.html" class="main-nav__link">Startseite</a><a href="therapie.html" class="main-nav__link main-nav__link--active">Therapie</a><a href="team.html" class="main-nav__link">Team</a><a href="praxis.html" class="main-nav__link">Praxis</a><a href="kontakt.html" class="main-nav__link">Kontakt</a><a href="buchen.html" class="nav-cta">📅 Online Buchen</a></nav></div></header>
+  <header class="site-header"><div class="container site-header__inner"><a href="index.html" class="logo" aria-label="Startseite"><div class="logo__icon"><svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="46" height="46"><rect width="46" height="46" rx="10" fill="#f28505"/><rect x="19" y="9" width="8" height="28" rx="4" fill="white"/><rect x="9" y="19" width="28" height="8" rx="4" fill="white"/></svg></div><div class="logo__text">Therapiezentrum<br><span>Blumau / Linz</span></div></a><button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false"><span class="bar"></span><span class="bar"></span><span class="bar"></span></button><nav class="main-nav" aria-label="Hauptnavigation"><a href="index.html" class="main-nav__link">Startseite</a><div class="nav-dropdown"><a href="therapie.html" class="main-nav__link main-nav__link--active">Therapie <svg class="nav-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a><div class="nav-dropdown__panel" role="menu"><a href="therapie.html#physiotherapie" class="nav-dropdown__item" role="menuitem"><span class="nav-dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 22 22" fill="none" aria-hidden="true"><rect x="8" y="2" width="6" height="18" rx="3" fill="currentColor"/><rect x="2" y="8" width="18" height="6" rx="3" fill="currentColor"/></svg></span>Physiotherapie</a><a href="therapie.html#osteopathie" class="nav-dropdown__item" role="menuitem"><span class="nav-dropdown__item-icon"><svg width="14" height="14" viewBox="0 0 22 22" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2.5"/><path d="M11 7v4M11 15h.01" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg></span>Osteopathie</a></div></div><a href="team.html" class="main-nav__link">Team</a><a href="praxis.html" class="main-nav__link">Praxis</a><a href="kontakt.html" class="main-nav__link">Kontakt</a><a href="buchen.html" class="nav-cta">Online Buchen</a></nav></div></header>
 
   <main>
     <div class="page-header">
@@ -25,11 +25,12 @@
       </div>
     </div>
 
-    <!-- Beschwerdebilder (from the real site) -->
     <section class="section">
       <div class="container">
+
+        <!-- Beschwerdebilder -->
         <div class="therapy-detail reveal">
-          <div class="therapy-detail__header"><span class="icon">💪</span><h2>Beschwerdebilder</h2></div>
+          <div class="therapy-detail__header"><h2>Beschwerdebilder</h2></div>
           <p>Unsere Kernkompetenz ist die Physiotherapie — in ihrer ganzen fachlichen Bandbreite. Wir bieten maßgeschneiderte Behandlungen für die Prophylaxe, Therapie und Rehabilitation Ihrer Beschwerden an.</p>
           <ul class="therapy-detail__list">
             <li>Akute und chronische Schmerzen</li>
@@ -51,53 +52,72 @@
           </ul>
         </div>
 
-        <!-- Physiotherapie -->
-        <article id="physiotherapie" class="therapy-detail reveal">
-          <div class="therapy-detail__header"><span class="icon">🦴</span><h2>Physiotherapie</h2></div>
-          <p>Das Therapiezentrum Blumau besticht mit höchster Qualität durch besten Ausbildungsstand in Österreich. Die enge Zusammenarbeit mit der Fortbildungsakademie für therapeutische Berufe macht sich für Sie bezahlt.</p>
-          <p>Wir bieten maßgeschneiderte Behandlungen für die Prophylaxe, Therapie und Rehabilitation Ihrer Beschwerden an.</p>
-          <p>Ob Rückenschule oder Wirbelsäulengymnastik: Unser umfangreiches Kursprogramm hilft Ihnen dabei, bewusst und mit Freude etwas für Ihre Gesundheit zu tun. Alltags- und arbeitsbezogen werden mit max. 6 Teilnehmern Übungs- sowie Bewegungskonzepte erarbeitet und vertieft.</p>
-          <ul class="therapy-detail__list">
-            <li>Manuelle Therapie</li>
-            <li>Sportphysiotherapie</li>
-            <li>Orthopädische Physiotherapie</li>
-            <li>Traumatologische Physiotherapie</li>
-            <li>Rückenschule &amp; Wirbelsäulengymnastik</li>
-            <li>Skoliosetherapie</li>
-            <li>Beckenbodenrehabilitation</li>
-            <li>Prä- und postoperative Therapie</li>
-            <li>Präventive Physiotherapie</li>
-          </ul>
-        </article>
+        <!-- Physiotherapie — Accordion -->
+        <details id="physiotherapie" class="therapy-accordion reveal" open>
+          <summary class="therapy-accordion__trigger">
+            <div class="therapy-accordion__trigger-left">
+              <div class="therapy-accordion__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="2" width="6" height="18" rx="3" fill="#f28505"/><rect x="2" y="8" width="18" height="6" rx="3" fill="#f28505"/></svg>
+              </div>
+              <h2>Physiotherapie</h2>
+            </div>
+            <svg class="therapy-accordion__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="therapy-accordion__body">
+            <p>Das Therapiezentrum Blumau besticht mit höchster Qualität durch besten Ausbildungsstand in Österreich. Die enge Zusammenarbeit mit der Fortbildungsakademie für therapeutische Berufe macht sich für Sie bezahlt.</p>
+            <p>Wir bieten maßgeschneiderte Behandlungen für die Prophylaxe, Therapie und Rehabilitation Ihrer Beschwerden an.</p>
+            <p>Ob Rückenschule oder Wirbelsäulengymnastik: Unser umfangreiches Kursprogramm hilft Ihnen dabei, bewusst und mit Freude etwas für Ihre Gesundheit zu tun. Alltags- und arbeitsbezogen werden mit max. 6 Teilnehmern Übungs- sowie Bewegungskonzepte erarbeitet und vertieft.</p>
+            <ul class="therapy-detail__list">
+              <li>Manuelle Therapie</li>
+              <li>Sportphysiotherapie</li>
+              <li>Orthopädische Physiotherapie</li>
+              <li>Traumatologische Physiotherapie</li>
+              <li>Rückenschule &amp; Wirbelsäulengymnastik</li>
+              <li>Skoliosetherapie</li>
+              <li>Beckenbodenrehabilitation</li>
+              <li>Prä- und postoperative Therapie</li>
+              <li>Präventive Physiotherapie</li>
+            </ul>
+          </div>
+        </details>
 
-        <!-- Osteopathie -->
-        <article id="osteopathie" class="therapy-detail reveal">
-          <div class="therapy-detail__header"><span class="icon">🤲</span><h2>Osteopathie</h2></div>
-          <p>Ganzheitliche Behandlung des Bewegungsapparates, der Organe und des Nervensystems. Durch sanfte manuelle Techniken werden Blockaden gelöst und die Selbstheilungskräfte des Körpers aktiviert.</p>
-          <ul class="therapy-detail__list">
-            <li>Cranio-Sacral-Therapie</li>
-            <li>Viszerale Therapie</li>
-            <li>Kopfschmerzen &amp; Migräne</li>
-            <li>Verdauungsprobleme</li>
-            <li>Kieferprobleme (CMD)</li>
-            <li>Stressbedingte Beschwerden</li>
-          </ul>
-        </article>
+        <!-- Osteopathie — Accordion -->
+        <details id="osteopathie" class="therapy-accordion reveal">
+          <summary class="therapy-accordion__trigger">
+            <div class="therapy-accordion__trigger-left">
+              <div class="therapy-accordion__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8" stroke="#f28505" stroke-width="2"/><path d="M11 7v4M11 15h.01" stroke="#f28505" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <h2>Osteopathie</h2>
+            </div>
+            <svg class="therapy-accordion__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <div class="therapy-accordion__body">
+            <p>Ganzheitliche Behandlung des Bewegungsapparates, der Organe und des Nervensystems. Durch sanfte manuelle Techniken werden Blockaden gelöst und die Selbstheilungskräfte des Körpers aktiviert.</p>
+            <ul class="therapy-detail__list">
+              <li>Cranio-Sacral-Therapie</li>
+              <li>Viszerale Therapie</li>
+              <li>Kopfschmerzen &amp; Migräne</li>
+              <li>Verdauungsprobleme</li>
+              <li>Kieferprobleme (CMD)</li>
+              <li>Stressbedingte Beschwerden</li>
+            </ul>
+          </div>
+        </details>
 
         <!-- Termin CTA -->
         <div class="info-box info-box--orange text-center mt-4 reveal">
           <h3 class="text-orange">Termin vereinbaren</h3>
           <p class="text-soft" style="max-width: 600px; margin: 0 auto 1.5rem;">Wir sind Wahltherapeuten. Rufen Sie uns an oder buchen Sie direkt online.</p>
           <div class="flex gap-md justify-center flex-wrap">
-            <a href="buchen.html" class="btn btn--primary">📅 Online Buchen</a>
-            <a href="tel:+4373260545" class="btn btn--outline">📞 0732 / 60 54 50</a>
+            <a href="buchen.html" class="btn btn--primary">Online Buchen</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><div class="container"><div class="site-footer__grid"><div class="site-footer__brand"><div class="logo__icon">T</div><p>Therapiezentrum Blumau / Linz — Physiotherapie, Osteopathie und mehr.</p></div><nav aria-label="Footer Navigation"><h4>Navigation</h4><ul><li><a href="index.html">Startseite</a></li><li><a href="therapie.html">Therapie</a></li><li><a href="team.html">Team</a></li><li><a href="praxis.html">Praxis</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="buchen.html">Online Buchen</a></li></ul></nav><div><h4>Kontakt</h4><ul><li>📞 <a href="tel:+4373260545">0732 / 60 54 50</a></li><li>📍 Scharitzerstraße 8, 4020 Linz</li></ul></div></div><div class="site-footer__bottom"><span>© 2026 Therapiezentrum Blumau/Linz</span><div class="site-footer__bottom-links"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Sitemap</a></div></div></div></footer>
+  <footer class="site-footer"><div class="container"><div class="site-footer__grid"><div class="site-footer__brand"><div class="logo__icon"><svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="38" height="38"><rect width="38" height="38" rx="8" fill="#f28505"/><rect x="15" y="6" width="8" height="26" rx="4" fill="white"/><rect x="6" y="15" width="26" height="8" rx="4" fill="white"/></svg></div><p>Therapiezentrum Blumau / Linz — Physiotherapie, Osteopathie und mehr.</p></div><nav aria-label="Footer Navigation"><h4>Navigation</h4><ul><li><a href="index.html">Startseite</a></li><li><a href="therapie.html">Therapie</a></li><li><a href="team.html">Team</a></li><li><a href="praxis.html">Praxis</a></li><li><a href="kontakt.html">Kontakt</a></li><li><a href="buchen.html">Online Buchen</a></li></ul></nav><div><h4>Kontakt</h4><ul><li>Scharitzerstraße 8, 4020 Linz</li></ul></div></div><div class="site-footer__bottom"><span>© 2026 Therapiezentrum Blumau/Linz</span><div class="site-footer__bottom-links"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">Sitemap</a></div></div></div></footer>
   <script src="js/main.js"></script>
 </body>
 </html>

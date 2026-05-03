@@ -3,6 +3,15 @@
 //  No frameworks, vanilla ES6+
 // ============================================================
 
+// ── Splash Screen (index only) ───────────────────────────────
+const splash = document.getElementById('splash');
+if (splash) {
+  setTimeout(() => {
+    splash.classList.add('splash--fade');
+    splash.addEventListener('transitionend', () => splash.remove(), { once: true });
+  }, 1500);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ── 1. Font Resizing ──────────────────────────────────────

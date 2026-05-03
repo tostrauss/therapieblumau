@@ -332,7 +332,7 @@ p:last-child {
 .logo__icon {
   width: 46px;
   height: 46px;
-  background: #f28505;
+  background: transparent;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -479,6 +479,16 @@ p:last-child {
 .btn--white:hover {
   background: #fef3e6;
   color: #b86600;
+}
+.btn--white-outline {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.btn--white-outline:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
+  color: #ffffff;
 }
 .btn--ghost {
   border-color: rgba(255, 255, 255, 0.5);
@@ -1111,7 +1121,7 @@ p:last-child {
 .site-footer__brand .logo__icon {
   width: 38px;
   height: 38px;
-  background: #f28505;
+  background: transparent;
   color: #ffffff;
   display: inline-flex;
   align-items: center;
@@ -1501,6 +1511,67 @@ body.high-contrast .site-footer a {
   }
 }
 
+/* ── Splash Screen ──────────────────────────────────────── */
+#splash {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  z-index: 9999;
+  transition: opacity 0.45s ease;
+}
+#splash.splash--fade {
+  opacity: 0;
+  pointer-events: none;
+}
+.splash__logo {
+  height: 90px;
+  width: auto;
+  animation: splashPulse 0.85s ease-in-out infinite alternate;
+}
+@keyframes splashPulse {
+  from { transform: scale(0.9); opacity: 0.65; }
+  to   { transform: scale(1.12); opacity: 1; }
+}
+.splash__name {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d2d2d;
+  text-align: center;
+  line-height: 1.25;
+}
+.splash__name span {
+  display: block;
+  color: #f28505;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: "Source Sans 3", sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* ── Leitung Strip ──────────────────────────────────────── */
+.leitung-strip {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.65rem 1.8rem;
+  background: #fef8f2;
+  border: 1px solid #f0e8dd;
+  border-radius: 100px;
+  font-size: 0.83rem;
+  color: #6b6b6b;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.leitung-strip strong { color: #2d2d2d; }
+.leitung-strip__sep { color: #d4c9bb; font-size: 1.1rem; }
+
 /* ── Therapy Accordion ──────────────────────────────────── */
 .therapy-accordion {
   background: #ffffff;
@@ -1584,6 +1655,7 @@ details[open] .therapy-accordion__arrow {
   line-height: 0;
 }
 .logo__icon svg { display: block; }
+.logo__icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
 /* ── Service Card Photo Placeholder ────────────────────── */
 .service-card__photo {
@@ -1760,6 +1832,82 @@ details[open] .therapy-accordion__arrow {
     grid-template-columns: 1fr;
   }
   .leitung-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Team Contact Grid (kontakt.html) ───────────────────── */
+.team-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+.team-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  background: #ffffff;
+  border: 1px solid #e4d9cc;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.team-contact-card:hover {
+  border-color: #f28505;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+  color: inherit;
+}
+.team-contact-card__photo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fef3e6 0%, #fde4b4 100%);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.team-contact-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+.team-contact-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.team-contact-card__info strong {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1b1b1b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.team-contact-card__info span {
+  font-size: 0.78rem;
+  color: #5e5e5e;
+}
+.team-contact-card__tel {
+  font-weight: 700;
+  color: #f28505 !important;
+  font-size: 0.84rem !important;
+}
+@media (max-width: 900px) {
+  .team-contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 520px) {
+  .team-contact-grid {
     grid-template-columns: 1fr;
   }
 }

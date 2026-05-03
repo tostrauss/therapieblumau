@@ -12,6 +12,12 @@
 </head>
 <body>
 
+  <!-- Splash Screen -->
+  <div id="splash" aria-hidden="true">
+    <img src="images/logo 2011 Manderl rev00.png" alt="" class="splash__logo">
+    <p class="splash__name">Therapiezentrum<br><span>Blumau / Linz</span></p>
+  </div>
+
   <!-- Accessibility Bar -->
   <div class="a11y-bar" role="toolbar" aria-label="Barrierefreiheit-Werkzeuge">
     <div class="container a11y-bar__inner">
@@ -30,7 +36,7 @@
     <div class="container site-header__inner">
       <a href="index.html" class="logo" aria-label="Startseite">
         <div class="logo__icon">
-          <svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="46" height="46"><rect width="46" height="46" rx="10" fill="#f28505"/><rect x="19" y="9" width="8" height="28" rx="4" fill="white"/><rect x="9" y="19" width="28" height="8" rx="4" fill="white"/></svg>
+          <img src="images/logo 2011 Manderl rev00.png" alt="" aria-hidden="true">
         </div>
         <div class="logo__text">Therapiezentrum<br><span>Blumau / Linz</span></div>
       </a>
@@ -55,6 +61,7 @@
         <a href="team.html" class="main-nav__link">Team</a>
         <a href="praxis.html" class="main-nav__link">Praxis</a>
         <a href="kontakt.html" class="main-nav__link">Kontakt</a>
+        <a href="anfahrt.html" class="main-nav__link">Anfahrt</a>
         <a href="buchen.html" class="nav-cta">Online Buchen</a>
       </nav>
     </div>
@@ -77,13 +84,6 @@
             <a href="buchen.html" class="btn btn--primary">Online Termin buchen</a>
             <a href="therapie.html" class="btn btn--outline">Unsere Leistungen →</a>
           </div>
-          <div class="hero__badge mt-3">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f28505" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <div>
-              <strong>Scharitzerstraße 8, 4020 Linz</strong><br>
-              <span class="text-sm text-soft">Barrierefrei mit Lift · 1. Stock</span>
-            </div>
-          </div>
         </div>
 
         <!-- Sidebar: Terminvereinbarung -->
@@ -96,7 +96,6 @@
               <li><span>Barbara Landlinger:</span> <a href="tel:+436703591515">0670/359 15 15</a></li>
               <li><span>Daniela Brock:</span> <a href="tel:+436766026024">0676/602 602 4</a></li>
               <li><span>Eva Mostbauer:</span> <a href="tel:+436765503038">0676/550 30 38</a></li>
-              <li><span>Sabine Meznik:</span> <a href="tel:+436506060281">0650/60 60 281</a></li>
               <li><span>Moritz Winter:</span> <a href="tel:+436508738056">0650/873 80 56</a></li>
               <li><span>Magdalena König:</span> <a href="tel:+4367764871302">0677/64871302</a></li>
               <li><span>Chr. Reinsprecht:</span> <a href="tel:+4368181812116">0681/81812116</a></li>
@@ -112,26 +111,6 @@
       </div>
     </section>
 
-    <!-- Leitung -->
-    <section class="section bg-cream" aria-labelledby="leitung-title">
-      <div class="container container--narrow text-center">
-        <div class="section-header">
-          <h2 id="leitung-title">Leitung</h2>
-          <span class="section-header__line"></span>
-        </div>
-        <div class="grid grid--2" style="max-width: 600px; margin: 0 auto;">
-          <div class="info-box info-box--white text-center reveal">
-            <h4>Daniela Brock</h4>
-            <p class="text-soft text-sm">Fachliche Leitung</p>
-          </div>
-          <div class="info-box info-box--white text-center reveal reveal-delay-1">
-            <h4>Helmut Obermayr</h4>
-            <p class="text-soft text-sm">Geschäftsführung</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- Services Preview (Beschwerdebilder) -->
     <section class="section" aria-labelledby="services-title">
       <div class="container">
@@ -144,10 +123,7 @@
         <div class="grid grid--3">
           <article class="service-card reveal">
             <div class="service-card__photo">
-              <div class="service-card__photo-inner">
-                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="15" y="4" width="8" height="30" rx="4" fill="currentColor"/><rect x="4" y="15" width="30" height="8" rx="4" fill="currentColor"/></svg>
-                <span>Foto folgt</span>
-              </div>
+              <img src="images/0004.jpg" alt="Physiotherapie Behandlung">
             </div>
             <h3>Schmerzen &amp; Operationen</h3>
             <ul>
@@ -159,10 +135,7 @@
           </article>
           <article class="service-card reveal reveal-delay-1">
             <div class="service-card__photo">
-              <div class="service-card__photo-inner">
-                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M19 4C19 4 8 10 8 20c0 6.1 5 11 11 11s11-4.9 11-11C30 10 19 4 19 4z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/><path d="M19 15v6M16 18h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
-                <span>Foto folgt</span>
-              </div>
+              <img src="images/0025.jpg" alt="Wirbelsäule und Neurologie Behandlung">
             </div>
             <h3>Wirbelsäule &amp; Neurologie</h3>
             <ul>
@@ -174,10 +147,7 @@
           </article>
           <article class="service-card reveal reveal-delay-2">
             <div class="service-card__photo">
-              <div class="service-card__photo-inner">
-                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 28c2-6 6-10 12-10s10 4 12 10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><circle cx="19" cy="13" r="5" stroke="currentColor" stroke-width="2.5"/></svg>
-                <span>Foto folgt</span>
-              </div>
+              <img src="images/0010.jpg" alt="Spezialbereiche Therapie">
             </div>
             <h3>Spezialbereiche</h3>
             <ul>
@@ -191,6 +161,18 @@
 
         <div class="text-center mt-6">
           <a href="therapie.html" class="btn btn--outline">Alle Beschwerdebilder ansehen →</a>
+        </div>
+
+        <div class="text-center mt-4">
+          <div class="leitung-strip reveal">
+            <strong>Daniela Brock</strong>
+            <span aria-hidden="true">·</span>
+            <span>Fachliche Leitung</span>
+            <span class="leitung-strip__sep" aria-hidden="true">·</span>
+            <strong>Helmut Obermayr</strong>
+            <span aria-hidden="true">·</span>
+            <span>Geschäftsführung</span>
+          </div>
         </div>
       </div>
     </section>
@@ -223,7 +205,7 @@
       <div class="site-footer__grid">
         <div class="site-footer__brand">
           <div class="logo__icon">
-            <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="38" height="38"><rect width="38" height="38" rx="8" fill="#f28505"/><rect x="15" y="6" width="8" height="26" rx="4" fill="white"/><rect x="6" y="15" width="26" height="8" rx="4" fill="white"/></svg>
+            <img src="images/logo 2011 Manderl rev00.png" alt="" aria-hidden="true">
           </div>
           <p>Therapiezentrum Blumau / Linz — Physiotherapie, Osteopathie und mehr. Scharitzerstraße&nbsp;8, 4020&nbsp;Linz.</p>
         </div>
@@ -235,6 +217,7 @@
             <li><a href="team.html">Team</a></li>
             <li><a href="praxis.html">Praxis</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="anfahrt.html">Anfahrt</a></li>
             <li><a href="buchen.html">Online Buchen</a></li>
           </ul>
         </nav>

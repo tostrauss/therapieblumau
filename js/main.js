@@ -126,4 +126,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ── 8. Profile Modals ─────────────────────────────────────
+  const closeModal = (backdrop) => {
+    backdrop.classList.remove('is-open');
+    document.body.style.overflow = '';
+    const trigger = document.querySelector(`[data-modal="${backdrop.id}"]`);
+    if (trigger) trigger.focus();
+  };
+
+  document.querySelectorAll('.profile-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modal = document.getElementById(btn.dataset.modal);
+      if (!modal) return;
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('.profile-modal__close').focus();
+    });
+  });
+
+  document.querySelectorAll('.profile-modal-backdrop').forEach(backdrop => {
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) closeModal(backdrop);
+    });
+    backdrop.querySelector('.profile-modal__close').addEventListener('click', () => closeModal(backdrop));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.profile-modal-backdrop.is-open').forEach(closeModal);
+    }
+  });
+
 });

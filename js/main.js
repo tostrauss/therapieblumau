@@ -144,6 +144,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  document.querySelectorAll('.team-grid-card[data-modal]').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a, button')) return;
+      const modal = document.getElementById(card.dataset.modal);
+      if (!modal) return;
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      modal.querySelector('.profile-modal__close').focus();
+    });
+  });
+
   document.querySelectorAll('.profile-modal-backdrop').forEach(backdrop => {
     backdrop.addEventListener('click', (e) => {
       if (e.target === backdrop) closeModal(backdrop);

@@ -169,4 +169,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // ── 9. Auto-open profile modal when navigated via hash (e.g. team.html#modal-eva) ─
+  const openModalFromHash = (hash) => {
+    if (!hash || !hash.startsWith('#modal-')) return;
+    const modal = document.querySelector(hash);
+    if (modal && modal.classList.contains('profile-modal-backdrop')) {
+      modal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => modal.querySelector('.profile-modal__close')?.focus(), 50);
+    }
+  };
+  openModalFromHash(window.location.hash);
+  window.addEventListener('hashchange', () => openModalFromHash(window.location.hash));
+
 });

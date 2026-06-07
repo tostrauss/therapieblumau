@@ -603,18 +603,54 @@ p:last-child {
 .hero h1 .accent {
   color: #f28505;
 }
+.hero__welcome {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 3.4rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.08;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+.hero__welcome::after {
+  content: "";
+  display: block;
+  width: 84px;
+  height: 4px;
+  background: #f28505;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
 .hero__lead {
   font-size: 1.15rem;
   color: #5e5e5e;
   max-width: 520px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   line-height: 1.75;
+}
+.hero__lead:last-of-type {
+  margin-bottom: 2rem;
+}
+.hero__phone-hint {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.92rem;
+  color: #6b6b6b;
+}
+.hero__phone-hint a {
+  color: #f28505;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.hero__phone-hint a:hover {
+  color: #b86600;
 }
 .hero__actions {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 2.2rem;
+  margin-bottom: 1rem;
 }
 .hero__badge {
   display: inline-flex;
@@ -1124,9 +1160,14 @@ p:last-child {
   border: 2px solid #e4d9cc;
 }
 .a11y-highlight__icon {
-  margin-bottom: 0.75rem;
-  display: block;
+  margin: 0 auto 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   line-height: 1;
+}
+.a11y-highlight__icon svg {
+  margin: 0 auto;
 }
 .a11y-highlight h3 {
   font-size: 1.6rem;
@@ -1333,6 +1374,9 @@ body.high-contrast .site-footer a {
   .hero h1 {
     font-size: 2.4rem;
   }
+  .hero__welcome {
+    font-size: 2.6rem;
+  }
   .site-footer__grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -1382,6 +1426,13 @@ body.high-contrast .site-footer a {
   .hero h1 {
     font-size: 2.2rem;
   }
+  .hero__welcome {
+    font-size: 2.2rem;
+  }
+  .hero__welcome::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
   .hero__lead {
     margin-left: auto;
     margin-right: auto;
@@ -1425,6 +1476,9 @@ body.high-contrast .site-footer a {
     font-size: 1.85rem;
   }
   .hero h1 {
+    font-size: 1.9rem;
+  }
+  .hero__welcome {
     font-size: 1.9rem;
   }
   .btn {
@@ -1584,9 +1638,19 @@ body.high-contrast .site-footer a {
   pointer-events: none;
 }
 .splash__logo {
-  height: 90px;
+  height: 180px;
   width: auto;
   animation: splashPulse 0.85s ease-in-out infinite alternate;
+}
+@media (min-width: 1024px) {
+  .splash__logo {
+    height: 260px;
+  }
+}
+@media (max-width: 768px) {
+  .splash__logo {
+    height: 120px;
+  }
 }
 @keyframes splashPulse {
   from { transform: scale(0.9); opacity: 0.65; }
@@ -1594,20 +1658,30 @@ body.high-contrast .site-footer a {
 }
 .splash__name {
   font-family: "Playfair Display", serif;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #2d2d2d;
   text-align: center;
   line-height: 1.25;
 }
+@media (min-width: 1024px) {
+  .splash__name {
+    font-size: 2.2rem;
+  }
+}
 .splash__name span {
   display: block;
   color: #f28505;
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 600;
   font-family: "Source Sans 3", sans-serif;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+@media (min-width: 1024px) {
+  .splash__name span {
+    font-size: 1.15rem;
+  }
 }
 
 /* ── Leitung Strip ──────────────────────────────────────── */
@@ -1693,6 +1767,43 @@ details[open] .therapy-accordion__arrow {
 }
 .therapy-accordion__body .therapy-detail__list {
   margin-top: 1.4rem;
+}
+
+.therapy-therapists {
+  margin-top: 1.8rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0e8dd;
+}
+.therapy-therapists__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1b1b1b;
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.therapy-therapists__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.therapy-therapist-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: 100px;
+  background: #ffffff;
+  border: 2px solid #f28505;
+  color: #b86600;
+  font-weight: 600;
+  font-size: 0.88rem;
+  transition: 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.therapy-therapist-btn:hover {
+  background: #f28505;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(242, 133, 5, 0.22);
 }
 
 @media (max-width: 768px) {

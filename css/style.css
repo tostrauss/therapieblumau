@@ -635,35 +635,54 @@ p:last-child {
   color: #f28505;
   letter-spacing: 1.5px;
 }
-/* Willkommen – Variante „schlicht": gleiche Schrift wie der Fließtext */
-.hero__welcome--schlicht {
+/* Willkommen: schlicht, beim Darüberfahren mit der Maus Überblendung zur Handschrift.
+   Beide Fassungen liegen übereinander, damit beim Wechsel nichts springt. */
+.hero__welcome--wechsel {
+  display: grid;
+  justify-items: center;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #3d3d3d;
+}
+.hero__welcome--wechsel::after {
+  transition: transform 0.4s ease, width 0.4s ease;
+}
+.hero__welcome-text {
+  grid-area: 1 / 1;
+  align-self: center;
+  transition: opacity 0.4s ease;
+}
+.hero__welcome-text .accent {
+  letter-spacing: 0;
+}
+.hero__welcome-text--schlicht {
   font-family: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  text-transform: none;
-  letter-spacing: 0;
-  color: #3d3d3d;
 }
-.hero__welcome--schlicht .accent {
-  letter-spacing: 0;
-}
-/* Willkommen – Variante „verspielt": Handschrift */
-.hero__welcome--verspielt {
+.hero__welcome-text--verspielt {
   font-family: "Caveat", "Segoe Script", cursive;
-  font-size: 3.8rem;
+  font-size: 1.2em;
   font-weight: 700;
-  text-transform: none;
-  letter-spacing: 0;
   line-height: 1;
-  color: #3d3d3d;
+  opacity: 0;
 }
-.hero__welcome--verspielt .accent {
-  letter-spacing: 0;
+.hero__welcome-text--verspielt .accent {
   font-size: 1.15em;
 }
-.hero__welcome--verspielt::after {
+.hero__welcome--wechsel:hover .hero__welcome-text--schlicht {
+  opacity: 0;
+}
+.hero__welcome--wechsel:hover .hero__welcome-text--verspielt {
+  opacity: 1;
+}
+.hero__welcome--wechsel:hover::after {
   width: 160px;
-  height: 4px;
   transform: rotate(-2deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__welcome-text, .hero__welcome--wechsel::after {
+    transition: none;
+  }
 }
 .hero__lead {
   font-size: 1.15rem;

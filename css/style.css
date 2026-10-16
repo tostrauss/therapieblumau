@@ -157,6 +157,11 @@ p:last-child {
 .grid--3 {
   grid-template-columns: repeat(3, 1fr);
 }
+/* Weniger als 3 Karten: mittig statt linksbündig */
+.grid--zentriert {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 360px));
+  justify-content: center;
+}
 .grid--2-1 {
   grid-template-columns: 1.4fr 0.6fr;
 }

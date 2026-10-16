@@ -630,6 +630,36 @@ p:last-child {
   color: #f28505;
   letter-spacing: 1.5px;
 }
+/* Willkommen – Variante „schlicht": gleiche Schrift wie der Fließtext */
+.hero__welcome--schlicht {
+  font-family: "Source Sans 3", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #3d3d3d;
+}
+.hero__welcome--schlicht .accent {
+  letter-spacing: 0;
+}
+/* Willkommen – Variante „verspielt": Handschrift */
+.hero__welcome--verspielt {
+  font-family: "Caveat", "Segoe Script", cursive;
+  font-size: 3.8rem;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1;
+  color: #3d3d3d;
+}
+.hero__welcome--verspielt .accent {
+  letter-spacing: 0;
+  font-size: 1.15em;
+}
+.hero__welcome--verspielt::after {
+  width: 160px;
+  height: 4px;
+  transform: rotate(-2deg);
+}
 .hero__lead {
   font-size: 1.15rem;
   color: #5e5e5e;

@@ -713,6 +713,12 @@ p:last-child {
   text-align: justify;
   hyphens: auto;
 }
+/* Am Handy linksbündig: Blocksatz macht dort zu große Wortlücken */
+@media (max-width: 600px) {
+  .text-justify {
+    text-align: left;
+  }
+}
 .hero__phone-hint {
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;

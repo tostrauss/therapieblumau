@@ -343,7 +343,7 @@ p:last-child {
   align-items: center;
   justify-content: center;
   border-radius: 6px;
-  font-family: "Playfair Display", serif;
+  font-family: "Arial", Helvetica, sans-serif;
   font-weight: 900;
   font-size: 1.55rem;
 }
@@ -1075,7 +1075,7 @@ p:last-child {
 }
 
 .contact-block .phone-lg {
-  font-family: "Playfair Display", serif;
+  font-family: "Arial", Helvetica, sans-serif;
   font-size: 1.6rem;
   font-weight: 700;
   color: #f28505;
@@ -1271,7 +1271,7 @@ p:last-child {
   margin-bottom: 0;
 }
 .step-list__num {
-  font-family: "Playfair Display", serif;
+  font-family: "Arial", Helvetica, sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
   color: #f28505;
@@ -1305,7 +1305,7 @@ p:last-child {
   align-items: center;
   justify-content: center;
   border-radius: 5px;
-  font-family: "Playfair Display", serif;
+  font-family: "Arial", Helvetica, sans-serif;
   font-weight: 900;
   font-size: 1rem;
   margin-bottom: 0.4rem;
@@ -1740,7 +1740,7 @@ body.high-contrast .site-footer a {
   to   { transform: scale(1.12); opacity: 1; }
 }
 .splash__name {
-  font-family: "Playfair Display", serif;
+  font-family: "Arial", Helvetica, sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: #2d2d2d;

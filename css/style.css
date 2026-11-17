@@ -2278,6 +2278,9 @@ details[open] .therapy-accordion__arrow {
   text-align: justify;
   hyphens: auto;
 }
+.profile-modal__section p + p {
+  margin-top: 0.6rem;
+}
 /* Am Handy linksbündig: Blocksatz macht bei langem Text zu große Wortlücken */
 @media (max-width: 600px) {
   .profile-modal__section p {

@@ -182,4 +182,56 @@ document.addEventListener('DOMContentLoaded', () => {
   openModalFromHash(window.location.hash);
   window.addEventListener('hashchange', () => openModalFromHash(window.location.hash));
 
+  // ── 10. Beschwerdebilder-Karussell (therapie.html) ─────────────────────────
+  // Endlos zum Durchklicken: Pfeile, Klick auf das Vorschaubild, Pfeiltasten,
+  // am Handy wischen. Kein automatisches Weiterlaufen.
+  document.querySelectorAll('.complaint-carousel').forEach((carousel) => {
+    const items = Array.from(carousel.querySelectorAll('.complaint-card'));
+    const n = items.length;
+    if (!n) return;
+    const status = carousel.querySelector('.complaint-carousel__status');
+    let current = 0;
+
+    const render = () => {
+      items.forEach((item, i) => {
+        let d = (i - current + n) % n;
+        if (d > n / 2) d -= n;
+        item.classList.remove('is-current', 'is-prev', 'is-next', 'is-before', 'is-after');
+        if (d === 0) item.classList.add('is-current');
+        else if (d === -1) item.classList.add('is-prev');
+        else if (d === 1) item.classList.add('is-next');
+        else item.classList.add(d < 0 ? 'is-before' : 'is-after');
+        item.setAttribute('aria-hidden', d === 0 ? 'false' : 'true');
+      });
+      if (status) status.textContent = `Bild ${current + 1} von ${n}: ${items[current].textContent.trim()}`;
+    };
+    const go = (step) => {
+      current = (current + step + n) % n;
+      render();
+    };
+
+    carousel.querySelector('.complaint-carousel__btn--prev')?.addEventListener('click', () => go(-1));
+    carousel.querySelector('.complaint-carousel__btn--next')?.addEventListener('click', () => go(1));
+    items.forEach((item) => {
+      item.addEventListener('click', () => {
+        if (item.classList.contains('is-prev')) go(-1);
+        else if (item.classList.contains('is-next')) go(1);
+      });
+    });
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { go(-1); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { go(1); e.preventDefault(); }
+    });
+    let startX = null;
+    carousel.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    carousel.addEventListener('touchend', (e) => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+      startX = null;
+    });
+
+    render();
+  });
+
 });

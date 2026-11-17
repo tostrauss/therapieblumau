@@ -2275,6 +2275,14 @@ details[open] .therapy-accordion__arrow {
   color: #5e5e5e;
   line-height: 1.65;
   margin: 0;
+  text-align: justify;
+  hyphens: auto;
+}
+/* Am Handy linksbündig: Blocksatz macht bei langem Text zu große Wortlücken */
+@media (max-width: 600px) {
+  .profile-modal__section p {
+    text-align: left;
+  }
 }
 
 /* ── Team Profile Cards (full-width, detailed) ───────────── */

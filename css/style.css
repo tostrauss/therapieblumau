@@ -912,6 +912,17 @@ p:last-child {
   color: #1b1b1b;
   transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
+/* Bei Therapeut:innen ohne Online-Buchung ist der Telefon-Button der Haupt-Button: orange */
+.phone-btn--orange {
+  background: #f28505;
+  border-color: #f28505;
+  color: #ffffff;
+}
+.phone-btn.phone-btn--orange:hover {
+  background: #b86600;
+  border-color: #b86600;
+  color: #ffffff;
+}
 .phone-btn:hover {
   border-color: #f28505;
   color: #f28505;
